@@ -334,7 +334,6 @@
             <h2>시드단어</h2>
             <p>입력 후 엔터</p>
             <div class="form-group">
-                <label for="seedWord">Enter a word:</label>
                 <input type="text" id="seedWord" name="seedWord" placeholder="직접 추가하기" onkeypress="handleKeyPress(event)">
             </div>
             <div id="seedWordsContainer"></div>
@@ -537,12 +536,16 @@
 
             var label = document.createElement('label');
             label.htmlFor = word;
-            label.appendChild(document.createTextNode(word));
+
+            // h6 요소 생성
+            var h6 = document.createElement('h6');
+            // h6 요소에 텍스트 노드 추가
+            h6.appendChild(document.createTextNode(word));
+            // h6 요소를 label 요소에 추가
+            label.appendChild(h6);
 
             container.appendChild(checkbox);
             container.appendChild(label);
-
-
         }
 
         function submitForm() {
