@@ -1,0 +1,19 @@
+/* 색상 오렌지색으로 변경. */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a {
+    margin: 10px;
+    text-decoration: none;
+    color: #ff9500; /* 주황색으로 변경 */
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: #005faf; /* 호버 시 색상 변경 */
+  }
