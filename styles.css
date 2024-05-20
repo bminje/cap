@@ -1,6 +1,7 @@
+/* 별 떨어지는 모션*/
 html {
   height: 100%;
-  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden;
 }
 

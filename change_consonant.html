@@ -10,25 +10,36 @@
     <title>Change Consonant</title>
     <link rel="stylesheet" href="stylesstars.css">
     <link rel="stylesheet" href="ccstylesfont.css">
+    <link rel="stylesheet" href="ccstylescontent.css">
+
+    <style>
+        /* 페이지 내용이 넘칠 때 수직 스크롤바 추가 */
+        body {
+            height: 100vh;
+            overflow-y: auto; /* 수직 스크롤바를 항상 표시 */
+            overflow-x: auto;
+        }
+    </style>
+
 </head>
 <body>
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
-    <h1>Consonant Changer</h1>
 
+    <h1>Consonant Changer</h1>
     <input type="text" id="wordInput1" placeholder="Enter a word">
-    <button onclick="changeConsonant()">Change Consonant</button>
+    <button class="btn" onclick="changeConsonant()"><span>Change Consonant</span></button>
     <div id="result1"></div>
   
     <h1>Change Vowel</h1>
     <input type="text" id="wordInput2" placeholder="Enter a word">
-    <button onclick="changeVowel()">Change Vowel</button>
+    <button class="btn" onclick="changeVowel()"><span>Change Vowel</span></button>
     <div id="result2"></div>
   
     <h1>Generate Acronym</h1>
     <input type="text" id="phraseInput3" placeholder="Enter a word">
-    <button onclick="generateAcronym()">Generate Acronym</button>
+    <button class="btn" onclick="generateAcronym()"><span>Generate Acronym</span></button>
     <div id="result3"></div>
   
     <button onclick="goBack()">뒤로가기</button>

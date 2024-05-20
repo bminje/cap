@@ -3,12 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: #f5f7ff;
-}
+
 
 h2 {
-    margin-bottom: 30px; /* h2와 그 다음 요소 사이의 아래 여백 조절 */
+    margin-top: 30px; /* h2와 그 다음 요소 사이의 아래 여백 조절 */
 }
 
 section{
@@ -107,7 +105,7 @@ input[type="radio"]:checked:after{
 }
 
 label .fas{
-    font-size: 60px;
+    font-size: 40px;
     color: #2c2c51;
 }
 input[type="checkbox"]:checked + label .fas,
