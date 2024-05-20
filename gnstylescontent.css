@@ -24,9 +24,9 @@ section{
 
 .tile{
     display: inline-block; /* 타일 요소를 수평으로 배열하기 위한 속성 */
-    height: 200px;
-    width: 170px;
-    margin: 10px; /* 타일 사이의 간격을 조절하기 위한 속성 */
+    height: 130px;
+    width: 165px;
+    margin: 7px; /* 타일 사이의 간격을 조절하기 위한 속성 */
     position: relative;
 }
 
