@@ -2,25 +2,25 @@
 
 /* 전체 텍스트 색상을 주황색으로 설정 */
 body {
-    color: orange;
+    color: rgb(0, 170, 255);
     overflow-y: scroll;
     text-align: center;
 }
 
 /* h1, h2 태그의 텍스트 색상을 주황색으로 설정 */
 h1, h2 {
-    color: orange;
+    color: rgb(0, 170, 255);
     text-align: center;
 }
 
 /* 라벨의 텍스트 색상을 주황색으로 설정 */
 label {
-    color: orange;
+    color: rgb(0, 170, 255);
     text-align: center;
 }
 
 /* 버튼의 텍스트 색상을 주황색으로 설정 */
 form {
-    color: orange;
+    color: rgb(0, 170, 255);
     text-align: center;
 }
