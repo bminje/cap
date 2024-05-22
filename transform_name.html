@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Consonant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@100;200&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        header{
+            background-color: white;
+            
+            margin-top:0;
+           
+        }
+        a {
+            font-size: 18px;  /* 글꼴 크기를 24픽셀로 설정 */
+            color: #7DB249;      /* 링크 색상을 파란색으로 설정 */
+            text-decoration: none;  /* 밑줄 제거 */
+            padding: 10px;    /* 내부 여백 추가 */
+            display: inline-block;  /* 링크를 블록처럼 다룰 수 있게 설정 */
+            
+        }
+    </style>
+
+</head>
+<body>
+
+    <div>
+        <header class = head1>
+            <header>
+                <img src="{{ url_for('static', filename='name2.png') }}" alt="로고" class="logoname2">
+                <a href="/cc">자음바꾸기</a>
+                <a href="/gn">이름생성기</a>
+                <hr class="separator">
+            </header>
+        
+    </div>
+
+    <div class = body1>
+        <img src="{{ url_for('static', filename='llogo.png') }}" alt="로고" class="logo">
+
+        <img src="{{ url_for('static', filename='name1.png') }}" alt="로고" class="logoname">
+
+    </div>
+
+    <div class = shadow-container>
+ 
+
+    <h1>Consonant Changer</h1>
+    <input type="text" id="conInput" placeholder="Enter a word">
+    <button onclick="changeConsonant()">Change Consonant</button>
+    <div id="conResult"></div>
+
+    <h1>Vowel Changer</h1>
+    <input type="text" id="vowInput" placeholder="Enter a word">
+    <button onclick="changeVowel()">Change Vowel</button>
+    <div id="vowResult"></div>
+
+    <h1>Abbreviation Maker</h1>
+    <input type="text" id="abbInput" placeholder="Enter a word">
+    <button onclick="makeAbbreviation()">Make Abbreviation</button>
+    <div id="abbResult"></div>
+
+    <script>
+        async function changeConsonant() {
+            const wordInput = document.getElementById('conInput').value;
+            const resultDiv = document.getElementById('conResult');
+
+            if (!wordInput.trim()) {
+                resultDiv.innerHTML = '<p>Please enter a word.</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch('/change_consonant', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ word: wordInput })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultDiv.innerHTML = '<p>Changed word: ' + data.changed_word + '</p>';
+                } else {
+                    resultDiv.innerHTML = '<p>Error: ' + data.error + '</p>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
+            }
+        }
+
+        async function changeVowel() {
+            const wordInput = document.getElementById('vowInput').value;
+            const resultDiv = document.getElementById('vowResult');
+
+            if (!wordInput.trim()) {
+                resultDiv.innerHTML = '<p>Please enter a word.</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch('/change_vowel', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ word: wordInput })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultDiv.innerHTML = '<p>Changed word: ' + data.changed_word + '</p>';
+                } else {
+                    resultDiv.innerHTML = '<p>Error: ' + data.error + '</p>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
+            }
+        }
+
+        async function makeAbbreviation() {
+            const wordInput = document.getElementById('abbInput').value;
+            const resultDiv = document.getElementById('abbResult');
+
+            if (!wordInput.trim()) {
+                resultDiv.innerHTML = '<p>Please enter a word.</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch('/make_abbreviation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ word: wordInput })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultDiv.innerHTML = '<p>Changed word: ' + data.changed_word + '</p>';
+                } else {
+                    resultDiv.innerHTML = '<p>Error: ' + data.error + '</p>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html>
