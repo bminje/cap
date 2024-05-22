@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@100;200&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        header{
+            background-color: white;
+            
+            margin-top:0;
+           
+        }
+        a {
+            font-size: 18px;  /* 글꼴 크기를 24픽셀로 설정 */
+            color: #7DB249;      /* 링크 색상을 파란색으로 설정 */
+            text-decoration: none;  /* 밑줄 제거 */
+            padding: 10px;    /* 내부 여백 추가 */
+            display: inline-block;  /* 링크를 블록처럼 다룰 수 있게 설정 */
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class = head1>
+        <header>
+            <img src="{{ url_for('static', filename='name2.png') }}" alt="로고" class="logoname2">
+            <a href="/cc">자음바꾸기</a>
+            <a href="/gn">이름생성기</a>
+            <hr class="separator">
+        </header>
+        
+    </div>
+
+    <div class = body1>
+        <img src="{{ url_for('static', filename='llogo.png') }}" alt="로고" class="logo">
+
+        <img src="{{ url_for('static', filename='name1.png') }}" alt="로고" class="logoname">
+
+    </div>
+
+    <div class = shadow-container>
+
+        <div class = body1>
+                
+            <!-- 제품 또는 업종 라디오박스 -->
+            <div class="body2">
+                <div class = body3>
+                    <div class = box1>
+                        <div class = box2>
+                            <h2>1. 이르밍을 <span class = highlight>사용할 제품 또는 업종</span>을 선택하세요.</h2>
+                        </div>
+                        <div class = box3>
+                            <form id="sectorForm" class= btn1>
+                                <button type="button" class="btn2" data-value="요식업/식음료"><span class="btn3">🌮 요식업/식음료</span></button>
+                                <button type="button" class="btn2" data-value="의류/패션/쇼핑"><span class="btn3">👙 의류/패션/쇼핑</span></button>
+                                <button type="button" class="btn2" data-value="뷰티/미용/화장품"><span class="btn3">💅🏻 뷰티/미용/화장품</span></button>
+                                <button type="button" class="btn2" data-value="건강/의료/복지"><span class="btn3">🧑🏻‍🦼 건강/의료/복지</span></button>
+                                <button type="button" class="btn2" data-value="여행/스포츠/취미"><span class="btn3">💃🏻 여행/스포츠/취미</span></button>
+                                <button type="button" class="btn2" data-value="가정/출산/유아동"><span class="btn3">👩🏻‍❤️‍👨🏻 가정/출산/유아동</span></button>
+                                <button type="button" class="btn2" data-value="엔터테인먼트/미디어"><span class="btn3">🕹️ 엔터테인먼트/미디어</span></button>
+                                <button type="button" class="btn2" data-value="반려/애완용품"><span class="btn3">🐶 반려/애완용품</span></button>
+                                <button type="button" class="btn2" data-value="생활용품/가구/가전제품"><span class="btn3">🛋️ 생활용품/가구/가전제품</span></button>
+                                <button type="button" class="btn2" data-value="인테리어/건축/부동산"><span class="btn3">🛠️ 인테리어/건축/부동산</span></button>
+                                <button type="button" class="btn2" data-value="교육"><span class="btn3">📓 교육</span></button>
+                                <button type="button" class="btn2" data-value="과학기술/혁신"><span class="btn3">🧪 과학기술/혁신</span></button>
+                                <button type="button" class="btn2" data-value="자동차/운송"><span class="btn3">🚐 자동차/운송</span></button>                                
+                            </form>
+                        </div>  
+                    </div>
+
+
+                    <div class = box1>
+                        <div class = box2>
+                            <h2>2. 원하는 <span class = highlight>브랜드 가치</span>를 선택하세요.</h2>
+                        </div>
+                        <div class = box3>
+                            <form id="brandValueForm" class= btn1>
+                                <button type="button" class="btn2" data-value="전문성"><span class="btn3">전문성</span></button>
+                                <button type="button" class="btn2" data-value="고급스러운"><span class="btn3">고급스러운</span></button>
+                                <button type="button" class="btn2" data-value="실용적인"><span class="btn3">실용적인</span></button>
+                                <button type="button" class="btn2" data-value="건강한"><span class="btn3">건강한</span></button>
+                                <button type="button" class="btn2" data-value="편안한"><span class="btn3">편안한</span></button>
+                                <button type="button" class="btn2" data-value="트렌디한"><span class="btn3">트렌디한</span></button>
+                                <button type="button" class="btn2" data-value="특이한"><span class="btn3">특이한</span></button>
+                                <button type="button" class="btn2" data-value="현대적인"><span class="btn3">현대적인</span></button>
+                                <button type="button" class="btn2" data-value="전통적인"><span class="btn3">전통적인</span></button>
+                                <button type="button" class="btn2" data-value="감성적인"><span class="btn3">감성적인</span></button>
+                                <button type="button" class="btn2" data-value="친근한"><span class="btn3">친근한</span></button>
+                                <button type="button" class="btn2" data-value="환경친화적"><span class="btn3">환경친화적</span></button>
+                                <button type="button" class="btn2" data-value="화려한"><span class="btn3">화려한</span></button>
+                                <button type="button" class="btn2" data-value="유쾌한"><span class="btn3">유쾌한</span></button>                                                         
+                            </form>
+                        </div>  
+                    </div>
+
+
+                    <div class = box1>
+                        <div class = box2>
+                            <h2>3. 원하는 <span class = highlight>트렌드</span>를 선택하세요.</h2>
+                        </div>
+                        <div class = box3>
+                            <form id="trendForm" class= btn1>
+                                <button type="button" class="btn2" data-value="수제"><span class="btn3">수제</span></button>
+                                <button type="button" class="btn2" data-value="유기농"><span class="btn3">유기농</span></button>
+                                <button type="button" class="btn2" data-value="비건"><span class="btn3">비건</span></button>
+                                <button type="button" class="btn2" data-value="즉석"><span class="btn3">즉석</span></button>
+                                <button type="button" class="btn2" data-value="무인"><span class="btn3">무인</span></button>
+                                <button type="button" class="btn2" data-value="셀프서비스"><span class="btn3">셀프서비스</span></button>
+                                <button type="button" class="btn2" data-value="지역적"><span class="btn3">지역적</span></button>
+                                <button type="button" class="btn2" data-value="글로벌"><span class="btn3">글로벌</span></button>
+                                <button type="button" class="btn2" data-value="퓨전"><span class="btn3">퓨전</span></button>
+                                <button type="button" class="btn2" data-value="테이크아웃"><span class="btn3">테이크아웃</span></button>
+                                <button type="button" class="btn2" data-value="1인"><span class="btn3">1인</span></button>
+                                <button type="button" class="btn2" data-value="모바일"><span class="btn3">모바일</span></button>
+                                <button type="button" class="btn2" data-value="레트로"><span class="btn3">레트로</span></button>
+                                <button type="button" class="btn2" data-value="배달"><span class="btn3">배달</span></button>                                                        
+                            </form>
+                        </div>  
+                    </div>
+
+                    <div class = box1>
+                        <div class = box2>
+                            <h2>4. 넣고싶은 <span class = highlight>시드단어</span>를 입력하세요.</h2>
+                        </div>
+                        <div class = box3>
+                            <form id="seedWordForm" class= input1>
+                                <div id="seedWordsContainer"></div>
+                                <label for="seedWord" class = "input2">#</label>
+                                <input type="text" id="seedWord" name="seedWord" placeholder="직접 추가하기" onkeypress="handleKeyPress(event)"> 
+                                </input>                                                                                                                    
+                            </form>
+                        </div>  
+                    </div>
+
+                    <div class = box1>
+                        <div class = box2>
+                            <h2>5. <span class = highlight>타깃</span>을 선택하세요.</h2>
+                        </div>
+                        <div class = box3>
+                            <form id="targetForm" class= btn1>
+                                <button type="button" class="btn2" data-value="유아동"><span class="btn3">유아동</span></button>
+                                <button type="button" class="btn2" data-value="청소년"><span class="btn3">청소년</span></button>
+                                <button type="button" class="btn2" data-value="성인"><span class="btn3">성인</span></button>
+                                <button type="button" class="btn2" data-value="노인/시니어"><span class="btn3">노인/시니어</span></button>
+                                <button type="button" class="btn2" data-value="학생"><span class="btn3">학생</span></button>
+                                <button type="button" class="btn2" data-value="직장인"><span class="btn3">직장인</span></button>
+                                <button type="button" class="btn2" data-value="부모"><span class="btn3">부모</span></button>
+                                <button type="button" class="btn2" data-value="지역민"><span class="btn3">지역민</span></button>
+                                <button type="button" class="btn2" data-value="외국인"><span class="btn3">외국인</span></button>
+                                <button type="button" class="btn2" data-value="소수자"><span class="btn3">소수자</span></button>
+                                <button type="button" class="btn2" data-value="1인가구"><span class="btn3">1인가구</span></button>
+                                <button type="button" class="btn2" data-value="남성"><span class="btn3">남성</span></button>
+                                <button type="button" class="btn2" data-value="여성"><span class="btn3">여성</span></button>                                                                              
+                            </form>
+                        </div>  
+                    </div>
+
+                    <div class = box1>
+                        <div class = box2>
+                            <h2>6. <span class = highlight>언어 스타일</span>을 선택하세요.</h2>
+                        </div>
+                        <div class = box3>
+                            <form id="languageStyleForm" class= btn1>
+                                <button type="button" class="btn2" data-value="순우리말"><span class="btn3">순우리말</span></button>
+                                <button type="button" class="btn2" data-value="한자식"><span class="btn3">한자식</span></button>
+                                <button type="button" class="btn2" data-value="영어식"><span class="btn3">영어식</span></button>
+                                <button type="button" class="btn2" data-value="일본식"><span class="btn3">일본식</span></button>
+                                <button type="button" class="btn2" data-value="유럽식"><span class="btn3">유럽식</span></button>                                                                                                     
+                            </form>
+                        </div>  
+                    </div>
+
+                    <div class = box1>
+                        <div class = box2>
+                            <h2>7. <span class = highlight>레벨</span>을 선택하세요.</h2>
+                        </div>
+                        <div class = box3>
+                            <form id="levelForm" class= btn1>
+                                <button type="button" class="btn2" data-value="직관적"><span class="btn3">직관적</span></button>
+                                <button type="button" class="btn2" data-value="중간"><span class="btn3">중간</span></button>
+                                <button type="button" class="btn2" data-value="독창적"><span class="btn3">독창적</span></button>                                                                                                                              
+                            </form>
+                        </div>  
+                    </div>
+
+                </div>
+                
+                <div class = body4>
+                    <button onclick="submitForm()" class = bbtn1>
+                        <p class = bbtn2> 생성하기 </p>
+                    </button>
+                    <div id="result"></div>
+                    <div id="resultPopup" class="popup">
+                        <div class="popup-content">
+                            <span class="close" onclick="closePopup()">&times;</span>
+                            <p id="resultText"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+
+    <script>
+        function handleKeyPress(event) {
+            if(event.key === 'Enter') {
+                event.preventDefault(); // 폼 제출 방지
+                var seedWord = document.getElementById('seedWord').value;
+                if(seedWord.trim() !== '') {
+                    addSeedWordCheckbox(seedWord);
+                    document.getElementById('seedWord').value = '';
+                }
+            }
+        }
+        
+
+        function addSeedWordCheckbox(word) {
+            var container = document.getElementById('seedWordsContainer');
+            var checkboxContainer = document.createElement('div');
+            checkboxContainer.classList.add('checkbox-container'); // 컨테이너에 클래스 추가
+        
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = word;
+            checkbox.name = 'seedWord';
+            checkbox.value = word;
+            checkbox.checked = true;
+
+            var label = document.createElement('label');
+            label.htmlFor = word;
+            label.appendChild(document.createTextNode(word));
+
+            container.appendChild(checkbox);
+            container.appendChild(label);
+        }
+
+        function submitForm() {
+            var sectorData = new FormData(document.getElementById('sectorForm'));
+            var brandValueData = new FormData(document.getElementById('brandValueForm'));
+            var trendData = new FormData(document.getElementById('trendForm'));
+            var seedWordData = new FormData(document.getElementById('seedWordForm'));
+            var targetData = new FormData(document.getElementById('targetForm'));
+            var languageStyleData = new FormData(document.getElementById('languageStyleForm'));
+            var levelData = new FormData(document.getElementById('levelForm'));
+
+            var request = new XMLHttpRequest();
+            request.open('POST', '/submit', true);
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            request.onload = function() {
+                if (request.status === 200) {
+                    var response = JSON.parse(request.responseText);
+                    document.getElementById('resultText').innerHTML = response.generated_name;
+                    document.getElementById('resultPopup').style.display = 'block';
+                } else {
+                    document.getElementById('resultText').innerHTML = 'Request failed. Please try again later.';
+                    document.getElementById('resultPopup').style.display = 'block';
+                }
+            };
+            
+            request.send(new URLSearchParams(sectorData) + '&' + new URLSearchParams(brandValueData) + '&' + new URLSearchParams(trendData) + '&' + new URLSearchParams(seedWordData) + '&' + new URLSearchParams(targetData) + '&' + new URLSearchParams(languageStyleData) + '&' + new URLSearchParams(levelData));
+        }
+
+        function closePopup() {
+            document.getElementById('resultPopup').style.display = 'none';
+        }
+
+        document.querySelectorAll('.btn2').forEach(button => {
+            button.addEventListener('click', () => {
+                const formId = button.closest('form').id;
+        
+                if (formId === 'sectorForm' || formId === 'levelForm') {
+                    // sectorForm 또는 levelForm의 버튼을 클릭한 경우
+                    document.querySelectorAll(`#${formId} .btn2`).forEach(btn => btn.classList.remove('selected'));
+                }
+        
+                button.classList.toggle('selected');
+            });
+        });
+        
+    </script>
+</body>
+</html>
