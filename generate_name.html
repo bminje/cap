@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkbox Form</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,28 +21,33 @@
             font-size: 18px;  /* 글꼴 크기를 24픽셀로 설정 */
             color: #7DB249;      /* 링크 색상을 파란색으로 설정 */
             text-decoration: none;  /* 밑줄 제거 */
-            padding: 10px;    /* 내부 여백 추가 */
+            padding-left: 10px;    /* 내부 여백 추가 */
+            padding-right: 10px;
             display: inline-block;  /* 링크를 블록처럼 다룰 수 있게 설정 */
-            
+            position: relative;
+            top: -11px;
         }
+        
+
     </style>
 </head>
 <body>
 
     <div class = head1>
         <header>
-            <img src="{{ url_for('static', filename='name2.png') }}" alt="로고" class="logoname2">
+            <img src="name2.png" alt="로고" class="logoname2">
             <a href="/cc">자음바꾸기</a>
             <a href="/gn">이름생성기</a>
+            <a href="https://iphuman.com/searchmark">상표 등록하기</a>
             <hr class="separator">
         </header>
         
     </div>
 
     <div class = body1>
-        <img src="{{ url_for('static', filename='llogo.png') }}" alt="로고" class="logo">
+        <img src="llogo.png" alt="로고" class="logo">
 
-        <img src="{{ url_for('static', filename='name1.png') }}" alt="로고" class="logoname">
+        <img src="name1.png" alt="로고" class="logoname">
 
     </div>
 
@@ -208,6 +213,9 @@
             </div>  
         </div>
     </div>
+
+    
+
 
 
     <script>

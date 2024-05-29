@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Consonant</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,49 +23,53 @@
             text-decoration: none;  /* 밑줄 제거 */
             padding: 10px;    /* 내부 여백 추가 */
             display: inline-block;  /* 링크를 블록처럼 다룰 수 있게 설정 */
-            
+            position: relative;
+            top: -11px;
         }
+        
     </style>
 
 </head>
 <body>
 
-    <div>
-        <header class = head1>
-            <header>
-                <img src="{{ url_for('static', filename='name2.png') }}" alt="로고" class="logoname2">
-                <a href="/cc">자음바꾸기</a>
-                <a href="/gn">이름생성기</a>
-                <hr class="separator">
-            </header>
+    <div class = head1>
+        <header>
+            <img src="name2.png" alt="로고" class="logoname2">
+            <a href="/cc">자음바꾸기</a>
+            <a href="/gn">이름생성기</a>
+            <a href="https://iphuman.com/searchmark">상표 등록하기</a>
+            <hr class="separator">
+        </header>
         
     </div>
 
     <div class = body1>
-        <img src="{{ url_for('static', filename='llogo.png') }}" alt="로고" class="logo">
+        <img src="llogo.png" alt="로고" class="logo">
 
-        <img src="{{ url_for('static', filename='name1.png') }}" alt="로고" class="logoname">
+        <img src="name1.png" alt="로고" class="logoname">
 
     </div>
 
     <div class = shadow-container>
  
 
-    <h1>Consonant Changer</h1>
-    <input type="text" id="conInput" placeholder="Enter a word">
-    <button onclick="changeConsonant()">Change Consonant</button>
-    <div id="conResult"></div>
+        <h1><span class="highlight">자음</span> 변경기</h1>
+        <input type="text" id="conInput" class="tninput" placeholder="Enter a word">
+        <button class="tnb" onclick="changeConsonant()">자음 바꾸기</button>
+        <div id="conResult"></div>
 
-    <h1>Vowel Changer</h1>
-    <input type="text" id="vowInput" placeholder="Enter a word">
-    <button onclick="changeVowel()">Change Vowel</button>
-    <div id="vowResult"></div>
+        <h1><span class="highlight">모음</span> 변경기</h1>
+        <input type="text" id="vowInput" class="tninput" placeholder="Enter a word">
+        <button class="tnb" onclick="changeVowel()">모음 바꾸기</button>
+        <div id="vowResult"></div>
 
-    <h1>Abbreviation Maker</h1>
-    <input type="text" id="abbInput" placeholder="Enter a word">
-    <button onclick="makeAbbreviation()">Make Abbreviation</button>
-    <div id="abbResult"></div>
-
+        <h1><span class="highlight">축약</span> 생성기</h1>
+        <input type="text" id="abbInput" class="tninput" placeholder="Enter a word">
+        <button class="tnb" onclick="makeAbbreviation()">축약 생성기</button>
+        <div id="abbResult"></div>
+    </div>
+    
+    
     <script>
         async function changeConsonant() {
             const wordInput = document.getElementById('conInput').value;
@@ -96,6 +100,7 @@
                 resultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
             }
         }
+        
 
         async function changeVowel() {
             const wordInput = document.getElementById('vowInput').value;
